@@ -27,6 +27,11 @@ if (!file.exists(dataset_folder)) {
   print("Dataset previously unzipped.")
 }
 
+if (!is.element("plyr", installed.packages()[,1])) {
+  print("Installing packages...")
+  install.packages("plyr")
+}
+
 library(plyr)
 
 # Changing the working directory to the dataset folder
@@ -81,6 +86,9 @@ names(dataset_subject_data) <- "subject"
 
 # Binding all the data in a single and final data set
 final_data <- cbind(dataset_x, dataset_y, dataset_subject_data)
+
+# Writing the results to the output file
+write.table(averages_data, "final_data.txt", row.name=FALSE)
 
 # 5. From the data set in step 4, creates a second, 
 # independent tidy data set with the average of each variable for each activity and each subject.
