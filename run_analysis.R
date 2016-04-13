@@ -88,7 +88,7 @@ names(dataset_subject_data) <- "subject"
 final_data <- cbind(dataset_x, dataset_y, dataset_subject_data)
 
 # Writing the results to the output file
-write.table(averages_data, "final_data.txt", row.name=FALSE)
+write.table(averages_data, "../final_data.txt", row.name=FALSE)
 
 # 5. From the data set in step 4, creates a second, 
 # independent tidy data set with the average of each variable for each activity and each subject.
@@ -97,7 +97,7 @@ print("Creating a second independent tidy data set with the average of each vari
 averages_data <- ddply(final_data, .(subject, activity), function(x) colMeans(x[, 1:66]))
 
 # Writing the results to the output file
-write.table(averages_data, "averages_data.txt", row.name=FALSE)
+write.table(averages_data, "../averages_data.txt", row.name=FALSE)
 
 # Changing back to the original working directory
 setwd(wd)
