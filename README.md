@@ -14,8 +14,8 @@ The R script, run_analysis.R, does the following:
 3. Loads both the training and test datasets
 4. Merges the two datasets
 5. Loads the activity and feature info to describe and filter the dataset
-6. Merges activity, mean, standard deviation and subject columns as a single dataset (`UCI HAR Dataset\final_data.txt`)
-7. Creates a tidy dataset that consists of the average (mean) value of each variable for each subject and activity pair (`UCI HAR Dataset\averages_data.txt`).
+6. Merges activity, mean, standard deviation and subject columns as a single dataset (`final_data.txt`)
+7. Creates a tidy dataset that consists of the average (mean) value of each variable for each subject and activity pair (`averages_data.txt`).
 
 To run it, simple type `source('run_analysis.R')` in the R console.
 
